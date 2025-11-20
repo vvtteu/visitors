@@ -4,8 +4,8 @@
       "id": "1",
       "fullName": "Иванов Иван Иванович",
       "company": "ООО Ромашка",
-      "group": "Прохожий",
-      "present": true
+      "group": "Клиент",
+      "present": false
     },
     {
       "id": "2",
@@ -13,6 +13,13 @@
       "company": "ООО Василёк",
       "group": "Клиент",
       "present": false
+    },
+    {
+      "fullName": "Степан",
+      "company": "ООО",
+      "group": "Прохожий",
+      "present": true,
+      "id": "1763627230341"
     }
   ]
 }
