@@ -10,7 +10,7 @@ const visitors = ref<Visitor[]>([]);
 const showModal = ref(false);
 
 onMounted(async () => {
-  const res = await fetch('http://localhost:3000/visitors');
+  const res = await fetch('/visitors');
   visitors.value = await res.json();
 });
 
@@ -68,7 +68,7 @@ function openModal(v: Visitor | null = null) {
 async function saveVisitor(payload: Visitor | Omit<Visitor, 'id'>) {
   if ('id' in payload) {
 
-    await fetch(`http://localhost:3000/visitors/${payload.id}`, {
+    await fetch(`/visitors/${payload.id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
@@ -77,7 +77,7 @@ async function saveVisitor(payload: Visitor | Omit<Visitor, 'id'>) {
     if (i !== -1) visitors.value[i] = payload;
   } else {
 
-    const res = await fetch('http://localhost:3000/visitors', {
+    const res = await fetch('/visitors', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...payload, id: Date.now().toString() }),
@@ -89,7 +89,7 @@ async function saveVisitor(payload: Visitor | Omit<Visitor, 'id'>) {
 }
 
 async function removeVisitor(id: string) {
-  await fetch(`http://localhost:3000/visitors/${id}`, { method: 'DELETE' });
+  await fetch(`/visitors/${id}`, { method: 'DELETE' });
   visitors.value = visitors.value.filter(v => v.id !== id);
   modalVisitor.value = undefined;
 }
