@@ -1,48 +1,49 @@
-# visitors
+# Visitors
 
-This template should help get you started developing with Vue 3 in Vite.
+Frontend: Vue 3 + TypeScript + Vite  
+Backend: json-server (локальный mock)  
+Design: ручная вёрстка (без UI-библиотек)
 
-## Recommended IDE Setup
+---
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Публичная демо-страница
+👉 [https://vvtteu.github.io/visitors/]
 
-## Recommended Browser Setup
+> Для полноценного функционала (добавление, редактирование, удаление)  
+> необходимо локально запустить json-server.
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+---
 
-## Type Support for `.vue` Imports in TS
+## Локальный запуск
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+### 1. Клонировать репозиторий
+```bash
+git clone https://github.com/vvtteu/visitors.git
+cd visitors
+```
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+### 2. Установить зависимости
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
+### 3. Запустить frontend и backend одной командой
+```bash
+npm run dev:all
 ```
+Фронт: http://localhost:5173
+Бэк: http://localhost:3000
 
-### Type-Check, Compile and Minify for Production
-
-```sh
+### 4. Сборка статики
+```bash
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## Реализованный функционал
+Список посетителей (таблица)
 
-```sh
-npm run lint
-```
+Добавление / редактирование / удаление (модальное окно)
+
+Поиск по ФИО + фильтр «Присутствуют / Отсутствуют»
+
+Сохранение состояния - фильтры и поиск сохраняются в URL (после перезагрузки не теряются)
